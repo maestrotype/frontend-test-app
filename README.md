@@ -1,27 +1,32 @@
-# FrontTestApp
+# Test app description
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
+### Routing
 
-## Development server
+* By using **module architecture** create 2 pages of registrations(**registration/step1**, **registration/step2**)
+* Use **queryParams** for auto-filing forms on step1 page
+    * first_name
+    * email
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Forms
 
-## Code scaffolding
+* Each page should contain it's own form(example of form you can see here - **assets/html/regForm.html**)<br> Use **[Reactive Forms](https://angular.io/guide/reactive-forms)**.
+* Form fields(input name - validation rules(forms where to use)):
+    * first_name - **required/'^[a-zA-Z ]+$'**(step1/step2)
+    * last_name - **required/'^[a-zA-Z ]+$'**(step2)
+    * email - **required**(step1/step2)
+    * password - **required/6-12 symbols**(step2)
+    * country - **required**(step2) - simple dropdown with some countries for your choice
+* After successful validation and submitting of step1's form user should be redirected to step2 page with auto-filling form inputs from previous page. As example if step1's form submitted and has phone_number input then if step2's form has this field too - it should be auto-filled.
+* Show message from vocabulary after successful registration(by using alert or some other way) 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Vocabulary
 
-## Build
+* Each page has a **vocabulary** that should be loaded from **assets/data/vocabulary.json**. It contains Placeholders/Validation errors/Registration status e.t.c.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Styles
 
-## Running unit tests
+* Styles are not that important for this task, but if you have a time - feel free.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### GIT
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* By the end of this task create pull-request into master branch in this format - **d/m/y:{your lastname}**
